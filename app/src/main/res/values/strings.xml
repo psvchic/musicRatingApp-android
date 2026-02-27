@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">musicRatingApp</string>
+    <string name="openartistprofile">Open artist profile</string>
 </resources>
