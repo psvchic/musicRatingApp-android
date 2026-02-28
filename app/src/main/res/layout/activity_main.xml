@@ -133,6 +133,86 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Albums" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/AlbumCover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:contentDescription="@string/openalbum"
+                app:srcCompat="@drawable/img_album_thelifeofashowergirl_taylorswift" />
+
+            <ImageButton
+                android:id="@+id/AlbumCover2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:contentDescription="@string/openalbum"
+                app:srcCompat="@drawable/img_album_okcomputer_radiohead" />
+
+            <ImageButton
+                android:id="@+id/AlbumCover3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:contentDescription="@string/openalbum"
+                app:srcCompat="@drawable/img_album_default" />
+
+            <ImageButton
+                android:id="@+id/AlbumCover4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:contentDescription="@string/openalbum"
+                app:srcCompat="@drawable/img_album_default" />
+
+            <ImageButton
+                android:id="@+id/AlbumCover5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:contentDescription="@string/openalbum"
+                app:srcCompat="@drawable/img_album_default" />
+
+            <ImageButton
+                android:id="@+id/AlbumCover6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:contentDescription="@string/openalbum"
+                app:srcCompat="@drawable/img_album_default" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
