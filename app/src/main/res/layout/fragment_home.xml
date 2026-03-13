@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.08"
+            android:text="Recently added"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Artists"
+            android:textSize="20sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:scrollbarSize="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <ImageButton
+                        android:id="@+id/ArtistPfp"
+                        app:srcCompat="@drawable/img_artist_avatar_taylorswift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/openartistprofile" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <ImageButton
+                        android:id="@+id/ArtistPfp2"
+                        app:srcCompat="@drawable/img_artist_avatar_radiohead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/openartistprofile" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <ImageButton
+                        android:id="@+id/ArtistPfp3"
+                        app:srcCompat="@drawable/img_avatar_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/openartistprofile" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <ImageButton
+                        android:id="@+id/ArtistPfp4"
+                        app:srcCompat="@drawable/img_avatar_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/openartistprofile" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <ImageButton
+                        android:id="@+id/ArtistPfp5"
+                        app:srcCompat="@drawable/img_avatar_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/openartistprofile" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <ImageButton
+                        android:id="@+id/ArtistPfp6"
+                        app:srcCompat="@drawable/img_avatar_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/openartistprofile" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Albums"
+            android:textSize="20sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:scrollbarSize="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/AlbumCover"
+                    app:srcCompat="@drawable/img_album_thelifeofashowergirl_taylorswift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:contentDescription="@string/openalbum" />
+
+                <ImageButton
+                    android:id="@+id/AlbumCover2"
+                    app:srcCompat="@drawable/img_album_okcomputer_radiohead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:contentDescription="@string/openalbum" />
+
+                <ImageButton
+                    android:id="@+id/AlbumCover3"
+                    app:srcCompat="@drawable/img_album_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:contentDescription="@string/openalbum" />
+
+                <ImageButton
+                    android:id="@+id/AlbumCover4"
+                    app:srcCompat="@drawable/img_album_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:contentDescription="@string/openalbum" />
+
+                <ImageButton
+                    android:id="@+id/AlbumCover5"
+                    app:srcCompat="@drawable/img_album_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:contentDescription="@string/openalbum" />
+
+                <ImageButton
+                    android:id="@+id/AlbumCover6"
+                    app:srcCompat="@drawable/img_album_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:contentDescription="@string/openalbum" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Songs"
+            android:textSize="20sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:scrollbarSize="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/SongImage"
+                        app:srcCompat="@drawable/img_album_thelifeofashowergirl_taylorswift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/opensong" />
+
+                    <TextView
+                        android:id="@+id/SongText"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="The Fate of Ophelia"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/SongImage2"
+                        app:srcCompat="@drawable/img_album_okcomputer_radiohead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/opensong" />
+
+                    <TextView
+                        android:id="@+id/SongText2"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="No suprises"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/SongImage3"
+                        app:srcCompat="@drawable/img_song_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/opensong" />
+
+                    <TextView
+                        android:id="@+id/SongText3"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="Song name"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/SongImage4"
+                        app:srcCompat="@drawable/img_song_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/opensong" />
+
+                    <TextView
+                        android:id="@+id/SongText4"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="Song name"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/SongImage5"
+                        app:srcCompat="@drawable/img_song_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/opensong" />
+
+                    <TextView
+                        android:id="@+id/SongText5"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="Song name"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/SongImage6"
+                        app:srcCompat="@drawable/img_song_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/screen_background_light_transparent"
+                        android:contentDescription="@string/opensong" />
+
+                    <TextView
+                        android:id="@+id/SongText6"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="Song name"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</FrameLayout>
