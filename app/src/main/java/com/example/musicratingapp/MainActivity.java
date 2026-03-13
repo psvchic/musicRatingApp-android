@@ -1,12 +1,15 @@
 package com.example.musicratingapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,5 +23,54 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ImageButton btnHome = findViewById(R.id.homeButton);
+        ImageButton btnFavourites = findViewById(R.id.favouritesButton);
+        ImageButton btnMyProfile = findViewById(R.id.myProfileButton);
+
+        btnHome.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.fragmentContainerView, HomeFragment.class, null)
+                                .setReorderingAllowed(true)
+                                .addToBackStack("home")
+                                .commit();
+                    }
+                }
+        );
+
+        btnFavourites.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.fragmentContainerView, FavoritesFragment.class, null)
+                                .setReorderingAllowed(true)
+                                .addToBackStack("favourites")
+                                .commit();
+                    }
+                }
+        );
+
+        btnMyProfile.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.fragmentContainerView, MyProfileFragment.class, null)
+                                .setReorderingAllowed(true)
+                                .addToBackStack("myProfile")
+                                .commit();
+                    }
+                }
+        );
     }
 }
