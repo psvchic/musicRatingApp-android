@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        // zarządzanie fragmentami poprzez FragmentManager
                         FragmentManager fragmentManager = getSupportFragmentManager();
 
                         fragmentManager.beginTransaction()
