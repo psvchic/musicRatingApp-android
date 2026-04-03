@@ -2,11 +2,19 @@ package com.example.musicratingapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.text.DateFormat;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +68,30 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    RecyclerView recyclerViewArtists;
+    ArrayList<Artist> artists;
+    RVAdapter rvAdapter;
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recyclerViewArtists = view.findViewById(R.id.recyclerViewArtists);
+        artists = new ArrayList<Artist>();
+        rvAdapter = new RVAdapter(artists);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewArtists.setLayoutManager(linearLayoutManager);
+        recyclerViewArtists.setAdapter(rvAdapter);
+
+        artists.add(new Artist(1,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(2,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(3,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(4,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(5,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(6,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        rvAdapter.notifyDataSetChanged();
+
     }
 }
