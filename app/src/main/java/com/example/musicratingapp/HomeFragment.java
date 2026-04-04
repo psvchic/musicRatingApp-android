@@ -85,13 +85,12 @@ public class HomeFragment extends Fragment {
         recyclerViewArtists.setLayoutManager(linearLayoutManager);
         recyclerViewArtists.setAdapter(rvAdapter);
 
-        artists.add(new Artist(1,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(2,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(3,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(4,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(5,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(6,"Melanie Martinez", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(1,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(2,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(3,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
         rvAdapter.notifyDataSetChanged();
+
+
 
     }
 }
