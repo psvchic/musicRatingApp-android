@@ -1,20 +1,19 @@
 package com.example.musicratingapp;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Artist {
     private int id;
     private String name;
-    private String bio;
+    private String description;
     private String imageUrl;
     private LocalDateTime dateAdded;
     private float userRating;
 
-    public Artist(int id, String name, String bio, String imageUrl, LocalDateTime dateAdded) {
+    public Artist(int id, String name, String description, String imageUrl, LocalDateTime dateAdded) {
         this.id = id;
         this.name = name;
-        this.bio = bio;
+        this.description = description;
         this.imageUrl = imageUrl;
         this.dateAdded = dateAdded;
     }
@@ -51,12 +50,12 @@ public class Artist {
         this.dateAdded = dateAdded;
     }
 
-    public String getBio() {
-        return bio;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public float getUserRating() {

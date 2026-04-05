@@ -1,6 +1,7 @@
 package com.example.musicratingapp;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,19 +39,23 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         // associate view with data
 
         // load image from url using Glide (https://github.com/bumptech/glide)
+        ImageButton imageButtonArtist = holder.imageButtonArtist;
         Glide.with(holder.itemView.getContext())
                 .load(artists.get(position).getImageUrl())
                 .apply(new RequestOptions().override(256, 256))
-                .into(holder.imageButtonArtist);
+                .into(imageButtonArtist);
 
         // set OnClickListener that goes to the artist profile
-        ImageButton imageButtonArtist = holder.imageButtonArtist;
+        Bundle bundle = new Bundle();
+        bundle.putString("name", artists.get(position).getName());
+        bundle.putString("imageUrl", artists.get(position).getImageUrl());
+        bundle.putString("description", artists.get(position).getDescription());
         imageButtonArtist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((FragmentActivity)v.getContext()).getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragmentContainerView, ArtistProfileFragment.class, null) // change null to smth to pass info about artist to ArtistProfileFragment
+                        .replace(R.id.fragmentContainerView, ArtistProfileFragment.class, bundle)
                         .setReorderingAllowed(true)
                         .addToBackStack("artist")
                         .commit();
