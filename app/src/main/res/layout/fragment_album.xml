@@ -13,18 +13,19 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/albumImage"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/img_album_default" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/albumTitle"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="albumTitle" />

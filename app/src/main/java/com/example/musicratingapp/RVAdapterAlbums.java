@@ -15,19 +15,19 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
+public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHolder>{
 
-    ArrayList<Artist> artists;
+    ArrayList<Album> albums;
 
-    public RVAdapter(ArrayList<Artist> artists){
-        this.artists = artists;
+    public RVAdapterAlbums(ArrayList<Album> albums){
+        this.albums = albums;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // set artist_template to recycle view
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_template, parent, false);
+        // set album_template to recycle view
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_template, parent, false);
         return new ViewHolder(view);
     }
 
@@ -36,25 +36,26 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         // associate view with data
 
         // load image from url using Glide (https://github.com/bumptech/glide)
-        ImageButton imageButtonArtist = holder.imageButtonArtist;
-        Glide.with(holder.itemView.getContext())
-                .load(artists.get(position).getImageUrl())
-                .apply(new RequestOptions().override(256, 256))
-                .into(imageButtonArtist);
+        ImageButton imageButtonAlbum = holder.imageButtonAlbum;
+        if (holder.imageButtonAlbum != null && albums.get(position).getImageUrl() != null) {
+            Glide.with(holder.itemView.getContext())
+                    .load(albums.get(position).getImageUrl())
+                    .into(holder.imageButtonAlbum);
+        }
 
         // set OnClickListener that goes to the artist profile
         Bundle bundle = new Bundle();
-        bundle.putString("name", artists.get(position).getName());
-        bundle.putString("imageUrl", artists.get(position).getImageUrl());
-        bundle.putString("description", artists.get(position).getDescription());
-        imageButtonArtist.setOnClickListener(new View.OnClickListener() {
+        bundle.putString("title", albums.get(position).getTitle());
+        bundle.putString("imageUrl", albums.get(position).getImageUrl());
+        //bundle.putString("description", albums.get(position).getSongs());
+        imageButtonAlbum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((FragmentActivity)v.getContext()).getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragmentContainerView, ArtistProfileFragment.class, bundle)
+                        .replace(R.id.fragmentContainerView, AlbumFragment.class, bundle)
                         .setReorderingAllowed(true)
-                        .addToBackStack("artist")
+                        .addToBackStack("album")
                         .commit();
             }
         });
@@ -62,18 +63,17 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        // return 0; - if there's a 0, there will be 0 elements in RecyclerView
-        return artists.size();
+        return albums.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        // implemented ImageButton from artist_template
-        ImageButton imageButtonArtist;
+        // implemented ImageButton from album_template
+        ImageButton imageButtonAlbum;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageButtonArtist = itemView.findViewById(R.id.artistPfp);
+            imageButtonAlbum = itemView.findViewById(R.id.albumImage);
         }
 
     }

@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.text.DateFormat;
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -71,27 +71,44 @@ public class HomeFragment extends Fragment {
     }
 
     RecyclerView recyclerViewArtists;
+    RecyclerView recyclerViewAlbums;
     ArrayList<Artist> artists;
     ArrayList<Album> albums;
-    RVAdapter rvAdapter;
+    RVAdapterArtists rvAdapterArtists;
+    RVAdapterAlbums rvAdapterAlbums;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerViewArtists = view.findViewById(R.id.recyclerViewArtists);
-        artists = new ArrayList<Artist>();
-        rvAdapter = new RVAdapter(artists);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewArtists.setLayoutManager(linearLayoutManager);
-        recyclerViewArtists.setAdapter(rvAdapter);
+        // make recyclerView work for artists
+        recyclerViewArtists = view.findViewById(R.id.recyclerViewArtists);
+        artists = new ArrayList<>();
+        rvAdapterArtists = new RVAdapterArtists(artists);
+
+        LinearLayoutManager linearLayoutManagerForArtists = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewArtists.setLayoutManager(linearLayoutManagerForArtists);
+        recyclerViewArtists.setAdapter(rvAdapterArtists);
 
         artists.add(new Artist(1,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
         artists.add(new Artist(2,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
         artists.add(new Artist(3,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        rvAdapter.notifyDataSetChanged();
+        rvAdapterArtists.notifyDataSetChanged();
 
+        // make recyclerView work for albums
+        recyclerViewAlbums = view.findViewById(R.id.recyclerViewAlbums);
+        albums = new ArrayList<>();
+        rvAdapterAlbums = new RVAdapterAlbums(albums);
 
+        LinearLayoutManager linearLayoutManagerForAlbums = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewAlbums.setLayoutManager(linearLayoutManagerForAlbums);
+        recyclerViewAlbums.setAdapter(rvAdapterAlbums);
+
+        ArrayList<Song> songsTest = new ArrayList<>();
+        songsTest.add(new Song());
+
+        albums.add(new Album(1, "Heaven or Las Vegas", "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fe6211303e796f3d5b7a0e02", LocalDateTime.now(), songsTest));
+        rvAdapterAlbums.notifyDataSetChanged();
 
     }
 }
