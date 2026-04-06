@@ -7,7 +7,7 @@
     app:cardCornerRadius="80dp">
 
     <ImageButton
-        android:id="@+id/ArtistPfp"
+        android:id="@+id/artistPfp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:drawable/screen_background_light_transparent"

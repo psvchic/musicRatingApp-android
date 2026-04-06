@@ -1,8 +1,6 @@
 package com.example.musicratingapp;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +8,6 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -76,7 +73,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageButtonArtist = itemView.findViewById(R.id.ArtistPfp);
+            imageButtonArtist = itemView.findViewById(R.id.artistPfp);
         }
 
     }

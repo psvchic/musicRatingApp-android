@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment {
 
     RecyclerView recyclerViewArtists;
     ArrayList<Artist> artists;
+    ArrayList<Album> albums;
     RVAdapter rvAdapter;
 
     @Override
