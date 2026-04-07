@@ -6,7 +6,7 @@
     android:orientation="horizontal">
 
     <ImageButton
-        android:id="@+id/AlbumCover"
+        android:id="@+id/albumCoverTemplate"
         app:srcCompat="@drawable/img_album_default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -40,6 +40,7 @@ public class RVAdapterArtists extends RecyclerView.Adapter<RVAdapterArtists.View
         Glide.with(holder.itemView.getContext())
                 .load(artists.get(position).getImageUrl())
                 .apply(new RequestOptions().override(256, 256))
+                .centerCrop()
                 .into(imageButtonArtist);
 
         // set OnClickListener that goes to the album profile
@@ -73,7 +74,7 @@ public class RVAdapterArtists extends RecyclerView.Adapter<RVAdapterArtists.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageButtonArtist = itemView.findViewById(R.id.artistPfp);
+            imageButtonArtist = itemView.findViewById(R.id.artistImageTemplate);
         }
 
     }

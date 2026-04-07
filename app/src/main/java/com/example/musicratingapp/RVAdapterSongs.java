@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -15,20 +16,20 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
-public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHolder>{
+public class RVAdapterSongs extends RecyclerView.Adapter<RVAdapterSongs.ViewHolder> {
 
-    ArrayList<Album> albums;
+    ArrayList<Song> songs;
 
-    public RVAdapterAlbums(ArrayList<Album> albums){
-        this.albums = albums;
+    public RVAdapterSongs(ArrayList<Song> songs){
+        this.songs = songs;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // set album_template to recycler view
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_template, parent, false);
-        return new ViewHolder(view);
+        // set song_template to recycler view
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.song_template, parent, false);
+        return new RVAdapterSongs.ViewHolder(view);
     }
 
     @Override
@@ -36,25 +37,24 @@ public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHo
         // associate view with data
 
         // load image from url using Glide (https://github.com/bumptech/glide)
-        ImageButton imageButtonAlbum = holder.imageButtonAlbum;
+        ImageButton imageButtonSong = holder.imageButtonSong;
         Glide.with(holder.itemView.getContext())
-                .load(albums.get(position).getImageUrl())
+                .load(songs.get(position).getImageUrl())
                 .apply(new RequestOptions().override(256, 256))
-                .into(imageButtonAlbum);
-
-        // set OnClickListener that goes to the album
+                .into(imageButtonSong);
+        holder.textViewSongName.setText(songs.get(position).getTitle());
+        // set OnClickListener that goes to the song
         Bundle bundle = new Bundle();
-        bundle.putString("title", albums.get(position).getTitle());
-        bundle.putString("imageUrl", albums.get(position).getImageUrl());
-        //bundle.putString("description", albums.get(position).getSongs());
-        imageButtonAlbum.setOnClickListener(new View.OnClickListener() {
+        bundle.putString("title", songs.get(position).getTitle());
+        bundle.putString("imageUrl", songs.get(position).getImageUrl());
+        imageButtonSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((FragmentActivity)v.getContext()).getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragmentContainerView, AlbumFragment.class, bundle)
+                        .replace(R.id.fragmentContainerView, SongFragment.class, bundle)
                         .setReorderingAllowed(true)
-                        .addToBackStack("album")
+                        .addToBackStack("song")
                         .commit();
             }
         });
@@ -62,18 +62,19 @@ public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHo
 
     @Override
     public int getItemCount() {
-        return albums.size();
+        return songs.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        // implemented ImageButton from album_template
-        ImageButton imageButtonAlbum;
+        // implemented ImageButton from song_template
+        ImageButton imageButtonSong;
+        TextView textViewSongName;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageButtonAlbum = itemView.findViewById(R.id.albumCoverTemplate);
+            imageButtonSong = itemView.findViewById(R.id.songImageTemplate);
+            textViewSongName = itemView.findViewById(R.id.songTitleTemplate);
         }
-
     }
 }

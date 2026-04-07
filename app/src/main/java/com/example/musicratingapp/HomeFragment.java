@@ -72,10 +72,13 @@ public class HomeFragment extends Fragment {
 
     RecyclerView recyclerViewArtists;
     RecyclerView recyclerViewAlbums;
+    RecyclerView recyclerViewSongs;
     ArrayList<Artist> artists;
     ArrayList<Album> albums;
+    ArrayList<Song> songs;
     RVAdapterArtists rvAdapterArtists;
     RVAdapterAlbums rvAdapterAlbums;
+    RVAdapterSongs rvAdapterSongs;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -93,6 +96,7 @@ public class HomeFragment extends Fragment {
         artists.add(new Artist(1,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
         artists.add(new Artist(2,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
         artists.add(new Artist(3,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
+        artists.add(new Artist(4,"Mazzy Star", "", "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7493b4c6192035c98af64d4da3", LocalDateTime.now()));
         rvAdapterArtists.notifyDataSetChanged();
 
         // make recyclerView work for albums
@@ -105,11 +109,26 @@ public class HomeFragment extends Fragment {
         recyclerViewAlbums.setAdapter(rvAdapterAlbums);
 
         ArrayList<Song> songsTest = new ArrayList<>();
-        songsTest.add(new Song());
+        songsTest.add(new Song(1, "something", artists.get(1), LocalDateTime.now()));
 
         albums.add(new Album(1, "Heaven or Las Vegas", "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fe6211303e796f3d5b7a0e02", LocalDateTime.now(), songsTest));
         albums.add(new Album(2, "Heaven or Las Vegas", "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fe6211303e796f3d5b7a0e02", LocalDateTime.now(), songsTest));
+        albums.add(new Album(3, "Heaven or Las Vegas", "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fe6211303e796f3d5b7a0e02", LocalDateTime.now(), songsTest));
         rvAdapterAlbums.notifyDataSetChanged();
+
+        // make recyclerView work for songs
+        recyclerViewSongs = view.findViewById(R.id.recyclerViewSongs);
+        songs = new ArrayList<>();
+        rvAdapterSongs = new RVAdapterSongs(songs);
+
+        LinearLayoutManager linearLayoutManagerForSongs = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewSongs.setLayoutManager(linearLayoutManagerForSongs);
+        recyclerViewSongs.setAdapter(rvAdapterSongs);
+
+        songs.add(new Song(1, "Fade Into You", artists.get(3), "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0289a392107ebd79818022b3ea", LocalDateTime.now()));
+        songs.add(new Song(2, "Fade Into You", artists.get(3), "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0289a392107ebd79818022b3ea", LocalDateTime.now()));
+        songs.add(new Song(3, "Fade Into You", artists.get(3), "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0289a392107ebd79818022b3ea", LocalDateTime.now()));
+        rvAdapterSongs.notifyDataSetChanged();
 
     }
 }

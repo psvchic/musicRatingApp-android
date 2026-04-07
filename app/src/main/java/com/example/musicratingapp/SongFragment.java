@@ -2,11 +2,18 @@ package com.example.musicratingapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +67,24 @@ public class SongFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_song, container, false);
+    }
+
+    ImageView imageViewSong;
+    TextView textViewSongTitle;
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        imageViewSong = view.findViewById(R.id.songImage);
+        textViewSongTitle = view.findViewById(R.id.songTitle);
+
+        if(getArguments() != null){
+            Glide.with(view.getContext())
+                    .load(getArguments().getString("imageUrl"))
+                    .apply(new RequestOptions().override(512, 512))
+                    .into(imageViewSong);
+            textViewSongTitle.setText(getArguments().getString("title"));
+        }
     }
 }

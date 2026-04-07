@@ -30,7 +30,7 @@
                 android:text="Title" />
 
             <RatingBar
-                android:id="@+id/ratingBar2"
+                android:id="@+id/ratingBarSong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
