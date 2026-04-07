@@ -26,7 +26,7 @@ public class RVAdapterArtists extends RecyclerView.Adapter<RVAdapterArtists.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // set artist_template to recycle view
+        // set artist_template to recycler view
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_template, parent, false);
         return new ViewHolder(view);
     }

@@ -26,7 +26,7 @@ public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // set album_template to recycle view
+        // set album_template to recycler view
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_template, parent, false);
         return new ViewHolder(view);
     }
@@ -37,11 +37,10 @@ public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHo
 
         // load image from url using Glide (https://github.com/bumptech/glide)
         ImageButton imageButtonAlbum = holder.imageButtonAlbum;
-        if (holder.imageButtonAlbum != null && albums.get(position).getImageUrl() != null) {
-            Glide.with(holder.itemView.getContext())
-                    .load(albums.get(position).getImageUrl())
-                    .into(holder.imageButtonAlbum);
-        }
+        Glide.with(holder.itemView.getContext())
+                .load(albums.get(position).getImageUrl())
+                .apply(new RequestOptions().override(256, 256))
+                .into(imageButtonAlbum);
 
         // set OnClickListener that goes to the artist profile
         Bundle bundle = new Bundle();
@@ -73,7 +72,7 @@ public class RVAdapterAlbums extends RecyclerView.Adapter<RVAdapterAlbums.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageButtonAlbum = itemView.findViewById(R.id.albumImage);
+            imageButtonAlbum = itemView.findViewById(R.id.AlbumCover);
         }
 
     }

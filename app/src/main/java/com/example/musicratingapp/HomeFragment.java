@@ -108,6 +108,7 @@ public class HomeFragment extends Fragment {
         songsTest.add(new Song());
 
         albums.add(new Album(1, "Heaven or Las Vegas", "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fe6211303e796f3d5b7a0e02", LocalDateTime.now(), songsTest));
+        albums.add(new Album(2, "Heaven or Las Vegas", "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02fe6211303e796f3d5b7a0e02", LocalDateTime.now(), songsTest));
         rvAdapterAlbums.notifyDataSetChanged();
 
     }
