@@ -1,4 +1,4 @@
-package com.example.musicratingapp;
+package com.example.musicratingapp.fragments;
 
 import android.os.Bundle;
 
@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.musicratingapp.R;
 
 /**
  * A simple {@link Fragment} subclass.

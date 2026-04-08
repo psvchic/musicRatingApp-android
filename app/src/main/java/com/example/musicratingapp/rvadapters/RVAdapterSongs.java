@@ -1,4 +1,4 @@
-package com.example.musicratingapp;
+package com.example.musicratingapp.rvadapters;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.musicratingapp.R;
+import com.example.musicratingapp.Song;
+import com.example.musicratingapp.fragments.SongFragment;
 
 import java.util.ArrayList;
 

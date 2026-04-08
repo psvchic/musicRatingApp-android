@@ -11,6 +11,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.musicratingapp.fragments.FavoritesFragment;
+import com.example.musicratingapp.fragments.HomeFragment;
+import com.example.musicratingapp.fragments.MyProfileFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

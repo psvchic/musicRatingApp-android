@@ -1,19 +1,27 @@
-package com.example.musicratingapp;
+package com.example.musicratingapp.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.example.musicratingapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FavoritesFragment#newInstance} factory method to
+ * Use the {@link AlbumFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FavoritesFragment extends Fragment {
+public class AlbumFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +32,7 @@ public class FavoritesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FavoritesFragment() {
+    public AlbumFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +42,11 @@ public class FavoritesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FavoritesFragment.
+     * @return A new instance of fragment AlbumFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FavoritesFragment newInstance(String param1, String param2) {
-        FavoritesFragment fragment = new FavoritesFragment();
+    public static AlbumFragment newInstance(String param1, String param2) {
+        AlbumFragment fragment = new AlbumFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +67,23 @@ public class FavoritesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorites, container, false);
+        return inflater.inflate(R.layout.fragment_album, container, false);
+    }
+
+    ImageView imageViewAlbum;
+    TextView textViewAlbumTitle;
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        imageViewAlbum = view.findViewById(R.id.albumImage);
+        textViewAlbumTitle = view.findViewById(R.id.albumTitle);
+
+        if(getArguments() != null){
+            Glide.with(view.getContext())
+                    .load(getArguments().getString("imageUrl"))
+                    .apply(new RequestOptions().override(512, 512))
+                    .into(imageViewAlbum);
+            textViewAlbumTitle.setText(getArguments().getString("title"));
+        }
     }
 }

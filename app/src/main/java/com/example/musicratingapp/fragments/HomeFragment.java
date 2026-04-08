@@ -1,4 +1,4 @@
-package com.example.musicratingapp;
+package com.example.musicratingapp.fragments;
 
 import android.os.Bundle;
 
@@ -12,7 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.lang.reflect.Array;
+import com.example.musicratingapp.Album;
+import com.example.musicratingapp.Artist;
+import com.example.musicratingapp.R;
+import com.example.musicratingapp.Song;
+import com.example.musicratingapp.rvadapters.RVAdapterAlbums;
+import com.example.musicratingapp.rvadapters.RVAdapterArtists;
+import com.example.musicratingapp.rvadapters.RVAdapterSongs;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 

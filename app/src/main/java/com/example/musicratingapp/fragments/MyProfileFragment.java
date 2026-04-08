@@ -1,26 +1,21 @@
-package com.example.musicratingapp;
+package com.example.musicratingapp.fragments;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+import com.example.musicratingapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SongFragment#newInstance} factory method to
+ * Use the {@link MyProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SongFragment extends Fragment {
+public class MyProfileFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +26,7 @@ public class SongFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SongFragment() {
+    public MyProfileFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +36,11 @@ public class SongFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SongFragment.
+     * @return A new instance of fragment MyProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SongFragment newInstance(String param1, String param2) {
-        SongFragment fragment = new SongFragment();
+    public static MyProfileFragment newInstance(String param1, String param2) {
+        MyProfileFragment fragment = new MyProfileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,25 +61,6 @@ public class SongFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_song, container, false);
-    }
-
-    ImageView imageViewSong;
-    TextView textViewSongTitle;
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        imageViewSong = view.findViewById(R.id.songImage);
-        textViewSongTitle = view.findViewById(R.id.songTitle);
-
-        if(getArguments() != null){
-            Glide.with(view.getContext())
-                    .load(getArguments().getString("imageUrl"))
-                    .apply(new RequestOptions().override(512, 512))
-                    .into(imageViewSong);
-            textViewSongTitle.setText(getArguments().getString("title"));
-        }
+        return inflater.inflate(R.layout.fragment_my_profile, container, false);
     }
 }
