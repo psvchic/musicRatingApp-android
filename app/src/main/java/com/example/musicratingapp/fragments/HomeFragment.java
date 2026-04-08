@@ -20,6 +20,13 @@ import com.example.musicratingapp.rvadapters.RVAdapterAlbums;
 import com.example.musicratingapp.rvadapters.RVAdapterArtists;
 import com.example.musicratingapp.rvadapters.RVAdapterSongs;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -100,10 +107,34 @@ public class HomeFragment extends Fragment {
         recyclerViewArtists.setLayoutManager(linearLayoutManagerForArtists);
         recyclerViewArtists.setAdapter(rvAdapterArtists);
 
-        artists.add(new Artist(1,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(2,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(3,"Melanie Martinez", "", "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df", LocalDateTime.now()));
-        artists.add(new Artist(4,"Mazzy Star", "", "https://image-cdn-fa.spotifycdn.com/image/ab67726900008f7493b4c6192035c98af64d4da3", LocalDateTime.now()));
+        // read artists from .json file
+        byte[] buffer;
+        try {
+            InputStream inputStream = view.getContext().getAssets().open("artists.json");
+            int size = inputStream.available();
+            buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        String jsonString = new String(buffer, StandardCharsets.UTF_8);
+        try {
+            JSONArray array = new JSONArray(jsonString);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject obj = array.getJSONObject(i);
+                String name = obj.getString("name");
+                String description = obj.getString("description");
+                String imageUrl = obj.getString("imageUrl");
+                LocalDateTime dateAdded = LocalDateTime.parse(obj.getString("dateAdded"));
+                float userRating = (float) obj.getDouble("userRating");
+
+                artists.add(new Artist(name, description, imageUrl, dateAdded, userRating));
+            }
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
         rvAdapterArtists.notifyDataSetChanged();
 
         // make recyclerView work for albums

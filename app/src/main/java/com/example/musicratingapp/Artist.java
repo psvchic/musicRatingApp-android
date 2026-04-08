@@ -17,6 +17,13 @@ public class Artist {
         this.imageUrl = imageUrl;
         this.dateAdded = dateAdded;
     }
+    public Artist(String name, String description, String imageUrl, LocalDateTime dateAdded, float userRating) {
+        this.name = name;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.dateAdded = dateAdded;
+        this.userRating = userRating;
+    }
 
     public int getId() {
         return id;

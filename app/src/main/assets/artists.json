@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Taylor Swift",
+    "description": "American singer-songwriter famous for her narrative songs about love and life. Known for hits like 'Love Story' and 'Shake It Off'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174e2e8e7ff002a4afda1c7147e",
+    "dateAdded": "2026-03-01T10:00:00",
+    "userRating": 0
+  },
+  {
+    "name": "Melanie Martinez",
+    "description": "American singer-songwriter known for her dark, theatrical pop style. Breakthrough with 'Dollhouse' and 'Pity Party'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174049b4a6c038ea063a413c5df",
+    "dateAdded": "2026-03-03T11:30:00",
+    "userRating": 0
+  },
+  {
+    "name": "The Beatles",
+    "description": "Legendary English rock band from Liverpool. Iconic songs include 'Hey Jude', 'Let It Be', and 'Yesterday'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174e9348cc01ff5d55971b22433",
+    "dateAdded": "2026-03-05T09:15:00",
+    "userRating": 0
+  },
+  {
+    "name": "Billie Eilish",
+    "description": "American singer-songwriter with a unique whispery vocal style. Famous for 'Bad Guy' and 'Everything I Wanted'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744a21b4760d2ecb7b0dcdc8da",
+    "dateAdded": "2026-03-07T14:20:00",
+    "userRating": 0
+  },
+  {
+    "name": "Ed Sheeran",
+    "description": "English singer-songwriter blending acoustic pop with heartfelt lyrics. Known for 'Shape of You' and 'Perfect'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d55c95ad400aed87da52daec",
+    "dateAdded": "2026-03-09T16:45:00",
+    "userRating": 0
+  },
+  {
+    "name": "Adele",
+    "description": "English singer-songwriter celebrated for her soulful voice and powerful ballads. Famous for 'Hello' and 'Rolling in the Deep'.",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517468f6e5892075d7f22615bd17",
+    "dateAdded": "2026-03-11T12:10:00",
+    "userRating": 0
+  },
+  {
+    "name": "Ariana Grande",
+    "description": "American singer and actress with a wide vocal range. Known for 'Thank U, Next' and '7 Rings'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746725802588d7dc1aba076ca5",
+    "dateAdded": "2026-03-13T09:50:00",
+    "userRating": 0
+  },
+  {
+    "name": "Drake",
+    "description": "Canadian rapper and singer known for his catchy hooks and introspective lyrics. Famous for 'God's Plan' and 'Hotline Bling'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744293385d324db8558179afd9",
+    "dateAdded": "2026-03-15T15:05:00",
+    "userRating": 0
+  },
+  {
+    "name": "Beyoncé",
+    "description": "American singer and performer known for her powerful vocals and stage presence. Hits include 'Single Ladies' and 'Halo'.",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747eaa373538359164b843f7c0",
+    "dateAdded": "2026-03-17T13:30:00",
+    "userRating": 0
+  },
+  {
+    "name": "Kendrick Lamar",
+    "description": "American rapper known for socially conscious lyrics and storytelling. Recognized for 'HUMBLE.' and 'Alright'.",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517439ba6dcd4355c03de0b50918",
+    "dateAdded": "2026-03-19T11:00:00",
+    "userRating": 0
+  },
+  {
+    "name": "Lady Gaga",
+    "description": "American singer and performer known for her theatrical style. Famous for 'Bad Romance' and 'Shallow'.",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174aadc18cac8d48124357c38e6",
+    "dateAdded": "2026-03-21T17:45:00",
+    "userRating": 0
+  },
+  {
+    "name": "Shawn Mendes",
+    "description": "Canadian singer-songwriter recognized for heartfelt pop hits. Known for 'Stitches' and 'Señorita'.",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517458b4b9419486550f6fda0535",
+    "dateAdded": "2026-03-23T14:15:00",
+    "userRating": 0
+  },
+  {
+    "name": "Dua Lipa",
+    "description": "English singer blending dance-pop and retro influences. Famous for 'Levitating' and 'Don't Start Now'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051740c68f6c95232e716f0abee8d",
+    "dateAdded": "2026-03-25T10:40:00",
+    "userRating": 0
+  },
+  {
+    "name": "Bruno Mars",
+    "description": "American singer-songwriter mixing funk, R&B, and pop. Hits include 'Uptown Funk' and '24K Magic'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c7688aad1bf03986934d7e26",
+    "dateAdded": "2026-03-27T12:30:00",
+    "userRating": 0
+  },
+  {
+    "name": "Post Malone",
+    "description": "American rapper and singer blending hip-hop and pop. Known for 'Circles' and 'Rockstar'.",
+    "imageUrl": "https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60?si=5853caa8f64c4706",
+    "dateAdded": "2026-03-29T09:20:00",
+    "userRating": 0
+  },
+  {
+    "name": "Selena Gomez",
+    "description": "American singer and actress, popular for her pop hits. Known for 'Lose You to Love Me' and 'Come & Get It'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174815e520e3ce7fe210046ba66",
+    "dateAdded": "2026-03-31T11:55:00",
+    "userRating": 0
+  },
+  {
+    "name": "Harry Styles",
+    "description": "English singer and songwriter, former member of One Direction. Famous for 'Watermelon Sugar' and 'Sign of the Times'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174e309f8c3056a59f20d0968ca",
+    "dateAdded": "2026-04-02T15:10:00",
+    "userRating": 0
+  },
+  {
+    "name": "Imagine Dragons",
+    "description": "American pop-rock band known for energetic stadium anthems. Hits include 'Radioactive' and 'Believer'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ab47d8dae2b24f5afe7f9d38",
+    "dateAdded": "2026-04-04T13:25:00",
+    "userRating": 0
+  },
+  {
+    "name": "Rihanna",
+    "description": "Barbadian singer and businesswoman, blending R&B, pop, and dance. Famous for 'Diamonds' and 'Work'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cb565a8e684e3be458d329ac",
+    "dateAdded": "2026-04-06T16:00:00",
+    "userRating": 0
+  },
+  {
+    "name": "Coldplay",
+    "description": "British rock band known for melodic, emotional music and stadium performances. Hits include 'Fix You' and 'Viva La Vida'.",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741ba8fc5f5c73e7e9313cc6eb",
+    "dateAdded": "2026-04-08T12:00:00",
+    "userRating": 0
+  }
+]
